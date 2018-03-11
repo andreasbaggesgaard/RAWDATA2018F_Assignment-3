@@ -137,7 +137,7 @@ namespace DomainModel
         }
 
         /* API */
-
+        //check
         private string[] GetPath(Request request)
         {
             string[] array = new string[2];

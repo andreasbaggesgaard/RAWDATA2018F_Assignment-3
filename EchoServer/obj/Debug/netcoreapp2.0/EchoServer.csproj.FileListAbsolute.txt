@@ -24,3 +24,17 @@ C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoServer\ob
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.dll
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.pdb
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csprojResolveAssemblyReference.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.deps.json
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.runtimeconfig.json
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.runtimeconfig.dev.json
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csprojResolveAssemblyReference.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CoreCompileInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfoInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfo.cs
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CopyComplete
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.pdb
