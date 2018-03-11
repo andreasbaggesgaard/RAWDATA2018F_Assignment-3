@@ -2,3 +2,4 @@
 *.VC.opendb
 *.opendb
 *.vs
+*.cache
