@@ -75,7 +75,9 @@ namespace DomainModel
                 response.Status = "2 Ok";
             }
         }
+
         
+
 
 
         //path  
@@ -254,6 +256,42 @@ namespace DomainModel
                     response.Status = "4 Bad Request"; 
                 }
             }
+        }
+
+
+        //All elements can be updated by use of the path extended with the id and the updated element
+        //in the body.Updates without an id in the path is not allowed and should return “4 Bad
+        //request”. On successful update return the “3 Updated” status
+
+        public void Update()
+        {
+            if (request.Method == "update")
+            {
+                var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+                if (el.Length == 3)
+                {
+                    response.Status = "4 Bad Request";
+                    
+                }
+                if (el.Length == 4)
+                {
+                    var pathid = int.Parse(el[3]);
+
+                    if (_database.CategoryExists(pathid))
+                    {
+                        _database.UpdateCategory(_database.GetCategory(pathid));
+                        response.Status = "3 Updated";
+                    }
+                    else
+                    {
+                        response.Status = "5 Not Found";
+                    }
+
+
+                    
+                }
+            }
+             
         }
     }
 }

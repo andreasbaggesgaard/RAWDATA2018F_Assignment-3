@@ -65,6 +65,9 @@ namespace EchoServer
                         case "create":
                             handleRequest.Create();
                             break;
+                        case "update":
+                            handleRequest.Update();
+                            break;
                         default:
                             break;
                     }
