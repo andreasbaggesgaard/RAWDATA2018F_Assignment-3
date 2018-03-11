@@ -293,6 +293,43 @@ namespace DomainModel
             }
              
         }
+
+
+        /*
+        delete
+        All elements can be deleted by use of the path extended with the id. If the element is not in
+        the database “5 Not found” should be returned otherwise “1 Ok”.*/
+
+        public void Delete()
+        {
+            if (request.Method == "delete")
+            {
+                var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+                if (el.Length == 3)
+                {
+                    response.Status = "4 Bad Request"; 
+                }
+                if (el.Length == 4)
+                {
+                    var pathid = int.Parse(el[3]);
+
+                    if (_database.CategoryExists(pathid))
+                    {
+                        _database.DeleteCategory(pathid);
+                        response.Status = "1 Ok";
+                    }
+                    else
+                    {
+                        response.Status = "5 Not Found";
+                    }
+
+
+
+                }
+            }
+
+        }
+
     }
 }
 

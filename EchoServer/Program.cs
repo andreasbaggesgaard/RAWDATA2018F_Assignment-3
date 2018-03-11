@@ -68,6 +68,9 @@ namespace EchoServer
                         case "update":
                             handleRequest.Update();
                             break;
+                        case "delete":
+                            handleRequest.Delete();
+                            break;
                         default:
                             break;
                     }
