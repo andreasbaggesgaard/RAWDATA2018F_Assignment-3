@@ -36,14 +36,7 @@ namespace DomainModel
             EchoRequest(request);
             
             return ReturnStatus();
-        }
-
-        public Response Read(Request request)
-        {
-
-
-            return response;
-        }
+        } 
 
         private Response ReturnStatus()
         {            
@@ -137,15 +130,8 @@ namespace DomainModel
                 responselist.Add("missing path");
             } 
             
-
-
-            var array = new string[2];
-            if (request.Path != null)
-            {
-
-                
-            }
-            return array;
+             
+            
         }
 
 
@@ -205,44 +191,38 @@ namespace DomainModel
 
         /* API */
         //check
-        
 
-        public Response ApiRead(Request request)
+
+        public Response Read(Request request)
         {
-            var path = GetPath(request);
-            if (path[1] != null)
+            if (request.Method == "read")
             {
-                var pathid = int.Parse(path[1]);
-
-                if (request.Method == "read")
+                var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+                if (el.Length == 2)
                 {
-                    if (path[0] == "categories")
+                    var pathid = int.Parse(el[3]);
+                    if (_database.GetAllCategories() != null)
                     {
-                        //var test = JsonConvert.SerializeObject(_database.GetAllCategories());
                         response.Body = _database.GetAllCategories().ToString();
-                        responselist.Add("1 OK");
                     }
-                    else if (path[1].Length > 0)
+                }
+                if (el.Length == 3)
+                {
+                    var pathid = int.Parse(el[3]);
+
+                    if (_database.CategoryExists(pathid))
                     {
-                        if (_database.CategoryExists(pathid))
-                        {
-                            response.Body = _database.GetCategory(pathid).ToString();
-                            responselist.Add("1 OK");
-                        }
-                        else
-                        {
-                            responselist.Add("5 Not Found");
-                        }
+                        response.Body = _database.GetCategory(pathid).ToString();
                     }
                     else
                     {
-                        responselist.Add("4 Bad Request");
-                    } 
+                        response.Status = "5 Not Found";
+                    }
                 }
             }
+
+            return response;
         }
-
-
     }
 }
 
