@@ -38,22 +38,30 @@ namespace EchoServer
 
         private static void ProcessData(TcpClient client)
         {
-            var strm = client.GetStream();
+            try
+            {
+                var strm = client.GetStream();
 
-            var buffer = new byte[client.ReceiveBufferSize];
-            
-            var readCnt = strm.Read(buffer, 0, buffer.Length);
+                var buffer = new byte[client.ReceiveBufferSize];
 
-            var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
-            var request = JsonConvert.DeserializeObject<Request>(payload);
+                var readCnt = strm.Read(buffer, 0, buffer.Length);
 
-            var validate = new ValidateRequest();
-            
-            //Console.WriteLine(request.Method);
-            
-            var res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+                var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
+                var request = JsonConvert.DeserializeObject<Request>(payload);
 
-            strm.Write(res, 0, res.Length);
+                var validate = new ValidateRequest();
+
+                
+
+                var res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+
+                strm.Write(res, 0, res.Length);
+            }
+            catch (Exception e)
+            {
+                 Console.WriteLine("something went wrong" + e.Message + e.StackTrace);
+                
+            }
         }
 
         /*

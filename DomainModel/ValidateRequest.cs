@@ -104,7 +104,11 @@ namespace DomainModel
         }
 
         private void IllegalBody(Request request)
-        {            
+        {
+            if (request.Body != null)
+            {
+
+            
             request.Body = request.Body.Trim();
             if ((request.Body.StartsWith("{") && request.Body.EndsWith("}")) ||
                 (request.Body.StartsWith("[") && request.Body.EndsWith("]"))) 
@@ -126,6 +130,7 @@ namespace DomainModel
             {
                 responselist.Add("illegal body");
             }
+            }
         }    
         
         private void EchoRequest(Request request)
@@ -140,42 +145,49 @@ namespace DomainModel
         //check
         private string[] GetPath(Request request)
         {
-            string[] array = new string[2];
-            array[0] = request.Path.Substring(request.Path.LastIndexOf("/api/") + 1);
-            array[1] = request.Path.Substring(request.Path.LastIndexOf("/api/categories/") + 1);
+            var array = new string[2];
+            if (request.Path != null)
+            {
+                
+                array[0] = request.Path.Substring(request.Path.LastIndexOf("/api/") + 1);
+                array[1] = request.Path.Substring(request.Path.LastIndexOf("/api/categories/") + 1);
+                
+            }
             return array;
         }
 
         private void ApiRead(Request request)
         {
             var path = GetPath(request);
-            var pathid = int.Parse(path[1]);
-
-            if (request.Method == "read")
+            if (path[1] != null)
             {
-               if(path[0] == "categories")
-               {
-                    //var test = JsonConvert.SerializeObject(_database.GetAllCategories());
-                    response.Body = _database.GetAllCategories().ToString();
-                    responselist.Add("1 OK");
-               }
-               else if (path[1].Length > 0)
-               {
-                    if(_database.CategoryExists(pathid))
+                var pathid = int.Parse(path[1]);
+
+                if (request.Method == "read")
+                {
+                    if (path[0] == "categories")
                     {
-                        response.Body = _database.GetCategory(pathid).ToString();
+                        //var test = JsonConvert.SerializeObject(_database.GetAllCategories());
+                        response.Body = _database.GetAllCategories().ToString();
                         responselist.Add("1 OK");
+                    }
+                    else if (path[1].Length > 0)
+                    {
+                        if (_database.CategoryExists(pathid))
+                        {
+                            response.Body = _database.GetCategory(pathid).ToString();
+                            responselist.Add("1 OK");
+                        }
+                        else
+                        {
+                            responselist.Add("5 Not Found");
+                        }
                     }
                     else
                     {
-                        responselist.Add("5 Not Found");
-                    }
-               }
-               else 
-               { 
-                    responselist.Add("4 Bad Request"); 
-               }
-               
+                        responselist.Add("4 Bad Request");
+                    } 
+                }
             }
         }
 
