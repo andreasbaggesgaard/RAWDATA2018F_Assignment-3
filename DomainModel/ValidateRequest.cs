@@ -104,7 +104,15 @@ namespace DomainModel
                             }
                             else if (el.Length == 3)
                             {
-                                responselist.Add("2 ok");
+                                try
+                                {
+                                    var i = int.Parse(el[2]);
+                                    responselist.Add("2 ok");
+                                }
+                                catch (Exception e)
+                                {
+                                    responselist.Add("Bad Request");
+                                } 
                             }
                         }
                         else if (request.Method == "read" || request.Method == "create")
@@ -116,7 +124,7 @@ namespace DomainModel
                         }
                         else
                         {
-                            responselist.Add("bad request");
+                            responselist.Add("Bad Request");
                         } 
                     }
                 }
@@ -199,8 +207,7 @@ namespace DomainModel
             {
                 var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
                 if (el.Length == 2)
-                {
-                    var pathid = int.Parse(el[3]);
+                { 
                     if (_database.GetAllCategories() != null)
                     {
                         response.Body = _database.GetAllCategories().ToString();
@@ -208,16 +215,28 @@ namespace DomainModel
                 }
                 if (el.Length == 3)
                 {
-                    var pathid = int.Parse(el[3]);
 
-                    if (_database.CategoryExists(pathid))
+                    try
                     {
-                        response.Body = _database.GetCategory(pathid).ToString();
+                        var pathid = int.Parse(el[2]);
+
+                        if (_database.CategoryExists(pathid))
+                        {
+                            response.Body = _database.GetCategory(pathid).ToString();
+                            responselist.Add("2 ok");
+                        }
+                        else
+                        {
+                            response.Status = "5 Not Found";
+                        }
+                        
                     }
-                    else
+                    catch (Exception e)
                     {
-                        response.Status = "5 Not Found";
+                        responselist.Add("Bad Request");
                     }
+                     
+                    
                 }
             }
 

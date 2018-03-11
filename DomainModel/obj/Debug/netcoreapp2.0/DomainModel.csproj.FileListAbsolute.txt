@@ -23,3 +23,4 @@ E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\net
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache
