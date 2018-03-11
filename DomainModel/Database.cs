@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace DomainModel
 {
-    public class Service
+    public class Database
     {
-        private List<Category> categories;
+        private List<Category> _categories;
 
-        public Service()
+        public Database()
         {
-            categories = new List<Category>
+            _categories = new List<Category>
             {
                 new Category { cid = 1, name = "Beverages" },
                 new Category { cid = 2, name = "Condiments" },
@@ -21,13 +21,13 @@ namespace DomainModel
 
         public Category GetCategory(int id)
         {
-            return categories.Find(i => i.cid == id);
+            return _categories.Find(i => i.cid == id);
         }
 
         public Category AddCategory(string newName)
         {
             var newCategory = new Category { cid = GetNextID(), name = newName };
-            categories.Add(newCategory);
+            _categories.Add(newCategory);
             return newCategory;
         }
 
@@ -40,14 +40,14 @@ namespace DomainModel
             }
             return ids.Max() + 1;*/
 
-            return categories.Max(i => i.cid) + 1;
+            return _categories.Max(i => i.cid) + 1;
 
         }
 
         public bool DeleteCategory(int id)
         {
             var category = GetCategory(id);
-            return categories.Remove(category);
+            return _categories.Remove(category);
         }
 
         public Category UpdateCategory(Category category)
@@ -59,12 +59,12 @@ namespace DomainModel
 
         public List<Category> GetAllCategories()
         {
-            return categories;
+            return _categories;
         }
 
         public bool CategoryExists(int id)
         {
-            foreach (var cat in categories)
+            foreach (var cat in _categories)
             {
                 if (cat.cid == id) return true;
             }
