@@ -46,7 +46,7 @@ namespace DomainModel
             }
             return this.response;
         }
-        //method 
+        //Method 
 
         private void ValidateMethod(Request request)
         {
@@ -62,10 +62,10 @@ namespace DomainModel
                             {
                                 if (request.Method == null)
                                 {
-                                    responselist.Add("Missing method");
+                                    responselist.Add("4 Missing Method");
                                 }
                                 else
-                                    responselist.Add("Illegal method");
+                                    responselist.Add("4 Illegal Method");
                             }
                         }
                     }
@@ -73,7 +73,7 @@ namespace DomainModel
             }
             else
             {
-                response.Status = "2 Ok";
+                response.Status = "1 Ok";
             }
         }
 
@@ -93,16 +93,16 @@ namespace DomainModel
                         {
                             responselist.Add("4 Bad Request");
                         }
-                        if (request.Method == "update" || request.Method == "delete" || request.Method == "read")
+                        if (  request.Method == "read" ||  request.Method == "create")
                         {
                             if (el.Length == 3)
                             {
-                                response.Status = "2 Ok";
+                                response.Status = "1 Ok";
                             }
                             //try
                             //{
                             //    var i = int.Parse(el[2]);
-                            //    responselist.Add("2 ok");
+                            //    responselist.Add("1 ok");
                             //}
                             //catch (Exception e)
                             //{
@@ -110,11 +110,11 @@ namespace DomainModel
                             //} 
 
                         }
-                        if (request.Method == "read" || request.Method == "create")
+                        if (request.Method == "delete" ||  request.Method == "update" || request.Method == "read"  )
                         {
                             if (el.Length == 4)
                             {
-                                response.Status = "2 Ok";
+                                response.Status = "1 Ok";
                             }
                         }
                     }
@@ -135,7 +135,7 @@ namespace DomainModel
         {
             if (request.Date == 0)
             {
-                responselist.Add("missing date");
+                responselist.Add("Missing date");
             }
         }
         /* 
@@ -145,7 +145,7 @@ namespace DomainModel
         //{
         //    if(request.Body == null)
         //    {
-        //        responselist.Add("missing body");
+        //        responselist.Add("Missing body");
         //    }
         //}
 
