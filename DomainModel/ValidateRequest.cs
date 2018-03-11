@@ -37,11 +37,19 @@ namespace DomainModel
         } 
 
         private Response ReturnStatus()
-        {            
-            foreach (string s in responselist)
+        {
+            if (responselist.Count == 1)
             {
-                response.Status = response.Status + ", " + s;
+                response.Status = responselist.First();
             }
+            else
+            {
+                foreach (string s in responselist)
+                {
+                    response.Status = response.Status + ", " + s;
+                }
+            }
+           
             return this.response;
         }
         //method 
@@ -120,7 +128,7 @@ namespace DomainModel
                 }
                 else
                 {
-                    responselist.Add("4 Illegal path");
+                    responselist.Add("4 Bad Request");
                 } 
             }
             else
