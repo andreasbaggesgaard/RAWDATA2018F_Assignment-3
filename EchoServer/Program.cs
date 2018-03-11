@@ -241,7 +241,7 @@ namespace EchoServer
                 {
                     response.Status = "1 OK";
                 }
-                else if (request.Method == "echo" || request.Method == "echo" || request.Method == "echo" || request.Method == "echo")
+                else if (request.Method == "create" || request.Method == "update" || request.Method == "update" || request.Method == "delete")
                 {
                     responselist.Add("4 Missing Resource");
                 }
