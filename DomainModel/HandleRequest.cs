@@ -27,7 +27,7 @@ namespace DomainModel
         {
             ValidateMethod(request);
             ValidatePath(request);
-            MissingDate(request);
+            ValidateDate(request);
 
             //body not required
             //MissingBody(request);
@@ -143,11 +143,28 @@ namespace DomainModel
         }
 
 
-        private void MissingDate(Request request)
+        private void ValidateDate(Request request)
         {
-            if (request.Date == 0)
+            if (request.Date == null)
             {
                 responselist.Add("4 Missing date");
+            }
+
+            /*
+             in Unix time (i.e. number of seconds that have elapsed since 1970-01- 01T00:00:00Z)
+             */
+            else
+            {
+                try
+                {
+                    int.Parse(request.Date);
+                }
+                catch (Exception)
+                {
+
+                    responselist.Add("4 Illegal date"); 
+
+                }
             }
         }
         /* 
