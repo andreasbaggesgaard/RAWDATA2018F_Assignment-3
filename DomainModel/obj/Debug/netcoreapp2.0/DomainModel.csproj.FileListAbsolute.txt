@@ -7,3 +7,12 @@ C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\o
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
 C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb

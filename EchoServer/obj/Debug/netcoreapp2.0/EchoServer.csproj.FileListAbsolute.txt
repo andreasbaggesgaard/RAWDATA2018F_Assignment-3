@@ -37,3 +37,4 @@ E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netc
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CopyComplete
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.dll
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csprojResolveAssemblyReference.cache
