@@ -207,8 +207,8 @@ namespace DomainModel
 
                         if (_database.CategoryExists(pathid))
                         {
-                            response.Body = _database.GetCategory(pathid).ToString();
-                            response.Status = "2 ok";
+                            response.Body = JsonConvert.SerializeObject(_database.GetCategory(pathid), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });  
+                            response.Status = "1 Ok";
                         }
                         else
                         {
