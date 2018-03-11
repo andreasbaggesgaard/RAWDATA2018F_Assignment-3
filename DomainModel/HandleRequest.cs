@@ -40,9 +40,21 @@ namespace DomainModel
 
         private Response ReturnStatus()
         {
-            foreach (string s in responselist)
+            if (!responselist.Any())
             {
-                response.Status = response.Status + ", " + s;
+                response.Status = "1 Ok";
+            }
+            else if (responselist.Count == 1)
+            {
+                response.Status = responselist.First();
+            }
+            else
+            {
+                foreach (string s in responselist)
+                {
+                    response.Status = response.Status + ", " + s;
+                }
+
             }
             return this.response;
         }
@@ -93,7 +105,7 @@ namespace DomainModel
                         {
                             responselist.Add("4 Bad Request");
                         }
-                        if (  request.Method == "read" ||  request.Method == "create")
+                        if (request.Method == "read" || request.Method == "create")
                         {
                             if (el.Length == 3)
                             {
@@ -110,7 +122,7 @@ namespace DomainModel
                             //} 
 
                         }
-                        if (request.Method == "delete" ||  request.Method == "update" || request.Method == "read"  )
+                        if (request.Method == "delete" || request.Method == "update" || request.Method == "read")
                         {
                             if (el.Length == 4)
                             {
@@ -121,7 +133,7 @@ namespace DomainModel
                 }
                 else
                 {
-                    responselist.Add("4 Illegal path");
+                    responselist.Add("4 Bad Request");
                 }
             }
             else
@@ -135,7 +147,7 @@ namespace DomainModel
         {
             if (request.Date == 0)
             {
-                responselist.Add("Missing date");
+                responselist.Add("4 Missing date");
             }
         }
         /* 
@@ -163,12 +175,16 @@ namespace DomainModel
                     }
                     catch (JsonReaderException jex)
                     {
-                        responselist.Add("illegal body");
+                        responselist.Add("4 Illegal body");
                     }
                     catch (Exception ex)
                     {
-                        responselist.Add("illegal body");
+                        responselist.Add("4 Illegal body");
                     }
+                }
+                else
+                {
+                    responselist.Add("4 Illegal body");
                 }
             }
         }
@@ -194,7 +210,7 @@ namespace DomainModel
                 {
                     if (_database.GetAllCategories() != null)
                     {
-                        response.Body = JsonConvert.SerializeObject(_database.GetAllCategories(), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+                        response.Body = Util.ToJson(_database.GetAllCategories());
                         response.Status = "1 Ok";
                     }
                 }
@@ -207,7 +223,7 @@ namespace DomainModel
 
                         if (_database.CategoryExists(pathid))
                         {
-                            response.Body = JsonConvert.SerializeObject(_database.GetCategory(pathid), new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });  
+                            response.Body = Util.ToJson(_database.GetCategory(pathid));
                             response.Status = "1 Ok";
                         }
                         else
@@ -241,7 +257,8 @@ namespace DomainModel
                 if (el.Length == 3)
                 {
                     //create new 
-                    _database.AddCategory(request.Body);
+                    var newCat = Util.FromJson<string>(request.Body);
+                    _database.AddCategory(newCat);
                     response.Status = "2 Created";
                 }
                 if (el.Length == 4)
@@ -262,24 +279,34 @@ namespace DomainModel
             if (request.Method == "update")
             {
                 var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
-                if (el.Length == 3)
+                if (el.Length <= 3)
                 {
                     response.Status = "4 Bad Request";
 
                 }
-                if (el.Length == 4)
+                else if (el.Length == 4)
                 {
                     var pathid = int.Parse(el[3]);
 
                     if (_database.CategoryExists(pathid))
                     {
-                        _database.UpdateCategory(_database.GetCategory(pathid));
-                        response.Status = "3 Updated";
+                        if (request.Body == null)
+                        {
+                            request.Body = string.Empty;
+                            var updatedCat = Util.FromJson<Category>(request.Body);
+                            response.Body = Util.ToJson(_database.UpdateCategory(updatedCat)); 
+                            response.Status = "3 Updated";
+                        }
+
                     }
                     else
                     {
                         response.Status = "5 Not Found";
                     }
+                }
+                else
+                {
+                    response.Status = "4 Bad Request";
                 }
             }
 
