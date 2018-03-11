@@ -49,9 +49,9 @@ namespace EchoServer
                 var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
                 var request = JsonConvert.DeserializeObject<Request>(payload);
 
-                var validate = new HandleRequest();
+                var handleRequest = new HandleRequest();
 
-                var response = validate.InputValidation(request);
+                var response = handleRequest.InputValidation(request);
                 var res = new byte[0];
 
                 if (response.Status.Contains("ok"))
@@ -60,20 +60,20 @@ namespace EchoServer
                     switch (response.Body)
                     {
                         case "read":
-
+                            handleRequest.Read();  
                             break;
                         default:
                             break;
                     }
                 }
-                if (validate.InputValidation(request).Status.Contains("ok"))
+                if (handleRequest.InputValidation(request).Status.Contains("ok"))
                 {
                     //do method
-                     res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+                     res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
                 }
                 else
                 {
-                      res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+                      res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
                 }
 
                 

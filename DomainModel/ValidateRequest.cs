@@ -193,7 +193,7 @@ namespace DomainModel
         //check
 
 
-        public Response Read(Request request)
+        public Response Read()
         {
             if (request.Method == "read")
             {
