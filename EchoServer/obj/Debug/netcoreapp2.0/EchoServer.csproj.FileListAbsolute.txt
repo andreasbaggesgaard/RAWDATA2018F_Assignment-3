@@ -31,7 +31,6 @@ E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netc
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.pdb
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.dll
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.pdb
-E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csprojResolveAssemblyReference.cache
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CoreCompileInputs.cache
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfoInputs.cache
 E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfo.cs
