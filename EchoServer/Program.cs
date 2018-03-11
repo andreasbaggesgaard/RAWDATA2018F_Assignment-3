@@ -141,11 +141,7 @@ namespace EchoServer
         {
             ValidateMethod(request);
             ValidatePath(request);
-            ValidateDate(request);
-
-            //body not required
-            //MissingBody(request);
-
+            ValidateDate(request);  
             ValidateBody(request);
 
 
@@ -160,10 +156,12 @@ namespace EchoServer
             }
             else if (responselist.Count == 1)
             {
+                response.Status = "";
                 response.Status = responselist.First();
             }
             else
             {
+                response.Status = "";
                 foreach (string s in responselist)
                 {
                     response.Status = response.Status + ", " + s;
@@ -225,14 +223,22 @@ namespace EchoServer
                                 response.Status = "1 Ok";
                             }
                         }
-                        if (request.Method == "delete" || request.Method == "update" || request.Method == "read")
+                        else if (request.Method == "delete" || request.Method == "update" || request.Method == "read")
                         {
                             if (el.Length == 4)
                             {
                                 response.Status = "1 Ok";
                             }
-                        }
+                            else
+                            {
+                                responselist.Add("4 Bad Request");
+                            }
+                        } 
                     }
+                }
+                else
+                {
+                    responselist.Add("4 Bad Request");
                 }
             }
             else if (request.Path == null && request.Method != null)
@@ -241,14 +247,13 @@ namespace EchoServer
                 {
                     response.Status = "1 OK";
                 }
-                else if (request.Method == "create" || request.Method == "update" || request.Method == "update" || request.Method == "delete")
+                else if (request.Method == "create" || request.Method == "read" || request.Method == "update" || request.Method == "delete")
                 {
                     responselist.Add("4 Missing Resource");
                 }
             }
             
-        }
-
+        } 
 
         private void ValidateDate(Request request)
         {
@@ -286,27 +291,36 @@ namespace EchoServer
 
         private void ValidateBody(Request request)
         {
+
             if (request.Body != null)
             {
-                request.Body = request.Body.Trim();
-                if ((request.Body.StartsWith("{") && request.Body.EndsWith("}")) ||
-                    (request.Body.StartsWith("[") && request.Body.EndsWith("]")))
+                if (request.Method != null)
                 {
-                    try
+                    if (request.Method == "echo")
                     {
-                        var obj = JToken.Parse(request.Body);
+                        response.Status = "1 OK";
                     }
-                    catch (JsonReaderException jex)
+                    else if (request.Method == "create" || request.Method == "read" || request.Method == "update" || request.Method == "delete")
                     {
-                        responselist.Add("4 Illegal Body");
-                    }
-                    catch (Exception ex)
-                    {
-                        responselist.Add("4 Illegal Body");
+                        {
+                            try
+                            {
+                                var obj = JToken.Parse(request.Body);
+                            }
+                            catch (JsonReaderException jex)
+                            {
+                                responselist.Add("4 Illegal Body");
+                            }
+                            catch (Exception ex)
+                            {
+                                responselist.Add("4 Illegal Body");
+                            }
+
+                        }
                     }
                 }
-            } 
-            else  
+            }
+            else if (request.Body == null)
             {
                 if (request.Method != null)
                 {
@@ -315,7 +329,6 @@ namespace EchoServer
                         responselist.Add("4 Missing Body");
                     }
                 }
-
             }
         }
 
