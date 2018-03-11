@@ -62,6 +62,9 @@ namespace EchoServer
                         case "read":
                             handleRequest.Read();  
                             break;
+                        case "create":
+                            handleRequest.Create();
+                            break;
                         default:
                             break;
                     }

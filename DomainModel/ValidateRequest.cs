@@ -12,6 +12,7 @@ namespace DomainModel
         List<string> responselist = new List<String>();
         Response response = new Response();
         Request request;
+        string _pathRoot = "/api/categories";
 
         private Service _database;
 
@@ -74,15 +75,16 @@ namespace DomainModel
                 response.Status = "2 Ok";
             }
         }
+        
 
 
         //path  
         public void ValidatePath(Request request)
         {
-            var pathRoot = "/api/categories";
+            
             if (request.Path != null)
             {
-                if (request.Path.Contains(pathRoot))
+                if (request.Path.Contains(_pathRoot))
                 {
                     if (request.Method != null)
                     {
@@ -230,6 +232,28 @@ namespace DomainModel
             }
 
             return response;
+        }
+
+        /*New elements can be added by use of the path and the new element in the body of the
+        request. Using path and an id is invalid and should return “4 Bad request”. On successful
+        creation return the “2 Created” status plus the newly create element in the body.*/
+        public void Create()
+        {
+            if (request.Method == "create")
+            {
+                var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+                if (el.Length == 3)
+                {
+                    //create new 
+                    _database.AddCategory(request.Body);  
+                    response.Status = "2 Created";
+                }
+                if (el.Length == 4)
+                {
+                    //bad request
+                    response.Status = "4 Bad Request"; 
+                }
+            }
         }
     }
 }
