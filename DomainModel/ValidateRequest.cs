@@ -223,7 +223,7 @@ namespace DomainModel
                         if (_database.CategoryExists(pathid))
                         {
                             response.Body = _database.GetCategory(pathid).ToString();
-                            responselist.Add("2 ok");
+                            response.Status = "2 ok";
                         }
                         else
                         {
@@ -233,7 +233,7 @@ namespace DomainModel
                     }
                     catch (Exception e)
                     {
-                        responselist.Add("Bad Request");
+                        response.Status = "Bad Request";
                     }
                      
                     
