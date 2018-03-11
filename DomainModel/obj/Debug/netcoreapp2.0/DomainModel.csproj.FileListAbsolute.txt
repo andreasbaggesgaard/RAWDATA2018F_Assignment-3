@@ -1,0 +1,17 @@
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb

@@ -1,0 +1,25 @@
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.deps.json
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.json
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.dev.json
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.pdb
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CoreCompileInputs.cache
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfoInputs.cache
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfo.cs
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\ngjak\Documents\GitHub\RAWDATA2018F_Livecode2\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.pdb
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.deps.json
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.json
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.dev.json
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.pdb
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csprojResolveAssemblyReference.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfo.cs
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.pdb
