@@ -49,12 +49,12 @@ namespace EchoServer
                 var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
                 var request = JsonConvert.DeserializeObject<Request>(payload);
 
-                var handleRequest = new HandleRequest();
+                var handleRequest = new HandleRequest(request);
 
-                var response = handleRequest.InputValidation(request);
+                var response = handleRequest.InputValidation();
                 var res = new byte[0];
 
-                if (response.Status.Contains("ok"))
+                if (response.Status.ToLower().Contains("ok"))
                 {
                     // do the method
                     switch (request.Method)
@@ -67,7 +67,7 @@ namespace EchoServer
                     }
                 }
 
-                res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
+                res = Encoding.UTF8.GetBytes(response.ToJson());
 
 
 

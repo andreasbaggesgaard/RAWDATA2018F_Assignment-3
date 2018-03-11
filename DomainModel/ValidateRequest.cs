@@ -15,20 +15,15 @@ namespace DomainModel
 
         private Service _database;
 
-        public HandleRequest()
+        public HandleRequest(Request request)
         {
             _database = new Service();
+            this.request = request;
         }
 
-        public Response InputValidation(Request request)
-        {
-
-            if(request == null)
-            {
-                request = new Request();
-            }
-            MissingMethod(request);
-            IlligalMethod(request);
+        public Response InputValidation()
+        { 
+            ValidateMethod(request);
             ValidatePath(request);
             MissingDate(request);
 
@@ -49,16 +44,9 @@ namespace DomainModel
             }
             return this.response;
         }
-        //method
-        private void MissingMethod(Request request)
-        {
-            if (request.Method == null)
-            {
-                responselist.Add("4 missing method");
-            }
-        }
+        //method 
 
-        private void IlligalMethod(Request request)
+        private void ValidateMethod(Request request)
         {
             if(request.Method != "create")
             {
@@ -72,14 +60,18 @@ namespace DomainModel
                             {
                                 if(request.Method == null)
                                 {
-
+                                    responselist.Add("Missing method");
                                 }
                                 else
-                                responselist.Add("illegal method");
+                                responselist.Add("Illegal method");
                             }
                         }                        
                     }
-                }                
+                }
+            }
+            else
+            {
+                response.Status = "2 Ok";
             }
         }
 
@@ -95,20 +87,17 @@ namespace DomainModel
                     if (request.Method != null)
                     {
                         var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
-                        if (request.Method == "update" || request.Method == "update")
+                        // "" "api" "categories" "resource"
+                        if (el.Length > 4)
+                        {
+                            responselist.Add("4 Bad Request");
+                        } 
+                        if (request.Method == "update" || request.Method == "delete" || request.Method == "read")
                         {  
-                            if (el.Length == 2 )
+                            if (el.Length == 3 )
                             {
-                                responselist.Add("missing resource");
-                            }
-                            else if(el.Length > 3)
-                            {
-                                responselist.Add("illegal path");
-                            }
-                            else if (el.Length == 3)
-                            {
-                                responselist.Add("2 ok");
-
+                                response.Status = "2 Ok";
+                            } 
                                 //try
                                 //{
                                 //    var i = int.Parse(el[2]);
@@ -118,29 +107,25 @@ namespace DomainModel
                                 //{
                                 //    responselist.Add("Bad Request");
                                 //} 
-                            }
+                             
                         }
-                        else if (request.Method == "read" || request.Method == "create")
+                        if (request.Method == "read" || request.Method == "create")
                         {
-                            if (el.Length == 2)
+                            if (el.Length == 4)
                             {
-                                responselist.Add("2 ok");
+                                response.Status = "2 Ok";
                             }
-                        }
-                        else
-                        {
-                            responselist.Add("Bad Request");
                         } 
                     }
                 }
                 else
                 {
-                    responselist.Add("illegal path");
+                    responselist.Add("4 Illegal path");
                 } 
             }
             else
             {
-                responselist.Add("missing path");
+                responselist.Add("4 Missing path");
             } 
             
              
@@ -209,19 +194,19 @@ namespace DomainModel
             if (request.Method == "read")
             {
                 var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
-                if (el.Length == 2)
+                if (el.Length == 3)
                 { 
                     if (_database.GetAllCategories() != null)
                     {
                         response.Body = _database.GetAllCategories().ToString();
                     }
                 }
-                if (el.Length == 3)
+                if (el.Length == 4)
                 {
 
                     try
                     {
-                        var pathid = int.Parse(el[2]);
+                        var pathid = int.Parse(el[3]);
 
                         if (_database.CategoryExists(pathid))
                         {
