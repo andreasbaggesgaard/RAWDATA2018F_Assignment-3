@@ -721,23 +721,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guru\\.nuget\\packages\\": {},
+    "C:\\Users\\andre\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoServer\\EchoServer.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\source\\repos\\assignment 3\\RAWDATA2018F_Assignment 3\\EchoServer\\EchoServer.csproj",
       "projectName": "EchoServer",
-      "projectPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoServer\\EchoServer.csproj",
-      "packagesPath": "C:\\Users\\guru\\.nuget\\packages\\",
-      "outputPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoServer\\obj\\",
+      "projectPath": "C:\\Users\\andre\\source\\repos\\assignment 3\\RAWDATA2018F_Assignment 3\\EchoServer\\EchoServer.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\source\\repos\\assignment 3\\RAWDATA2018F_Assignment 3\\EchoServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\guru\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -750,8 +753,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\DomainModel\\DomainModel.csproj": {
-              "projectPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\DomainModel\\DomainModel.csproj"
+            "C:\\Users\\andre\\source\\repos\\assignment 3\\RAWDATA2018F_Assignment 3\\DomainModel\\DomainModel.csproj": {
+              "projectPath": "C:\\Users\\andre\\source\\repos\\assignment 3\\RAWDATA2018F_Assignment 3\\DomainModel\\DomainModel.csproj"
             }
           }
         }
