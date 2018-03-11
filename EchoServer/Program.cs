@@ -69,7 +69,10 @@ namespace EchoServer
                             handleRequest.Update();
                             break;
                         case "delete":
-                            handleRequest.Delete();
+                            handleRequest.Delete(); 
+                            break;
+                        case "echo":
+                            handleRequest.Echo();
                             break;
                         default:
                             break;

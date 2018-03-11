@@ -33,7 +33,7 @@ namespace DomainModel
             //MissingBody(request);
 
             IllegalBody(request);
-            EchoRequest(request);
+             
 
             return ReturnStatus();
         }
@@ -138,7 +138,7 @@ namespace DomainModel
             }
             else
             {
-                responselist.Add("4 Missing path");
+                responselist.Add("4 Missing Resource");
             }
         }
 
@@ -206,11 +206,19 @@ namespace DomainModel
             }
         }
 
-        private void EchoRequest(Request request)
+        public void Echo()
         {
             if (request.Method == "echo")
             {
-                response.Body = request.Body;
+                if (request.Body != null)
+                {
+                    response.Body = request.Body;
+                }
+                else
+                {
+                    response.Status = "4 Missing Body";
+                }
+                
             }
         }
 
@@ -271,18 +279,29 @@ namespace DomainModel
             if (request.Method == "create")
             {
                 var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
-                if (el.Length == 3)
+
+                if (request.Body != null)
                 {
-                    //create new 
-                    var newCat = Util.FromJson<string>(request.Body);
-                    _database.AddCategory(newCat);
-                    response.Status = "2 Created";
+                    if (el.Length == 3)
+                    {
+                        //create new 
+                        var newCat = Util.FromJson<string>(request.Body);
+                        _database.AddCategory(newCat);
+                        response.Status = "2 Created";
+                    }
+                    if (el.Length == 4)
+                    {
+                        //bad request
+                        response.Status = "4 Bad Request";
+                    }
                 }
-                if (el.Length == 4)
+                else
                 {
-                    //bad request
-                    response.Status = "4 Bad Request";
+                    response.Status = "4 Missing Body";
                 }
+
+
+               
             }
         }
 
@@ -295,30 +314,41 @@ namespace DomainModel
         {
             if (request.Method == "update")
             {
-                var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
-                if (el.Length <= 3)
-                {
-                    response.Status = "4 Bad Request";
 
-                }
-                else if (el.Length == 4)
-                {
-                    var pathid = int.Parse(el[3]);
+                
 
-                    if (_database.CategoryExists(pathid))
+                if (request.Body != null)
+                {
+                    var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+
+
+                    if (el.Length <= 3)
                     {
-                        if (request.Body == null)
-                        {
-                            request.Body = string.Empty;
-                            var updatedCat = Util.FromJson<Category>(request.Body);
-                            response.Body = Util.ToJson(_database.UpdateCategory(updatedCat)); 
-                            response.Status = "3 Updated";
-                        }
+                        response.Status = "4 Bad Request";
+                    }
+                    else if (el.Length == 4)
+                    {
+                        var pathid = int.Parse(el[3]);
 
+                        if (_database.CategoryExists(pathid))
+                        {
+                            if (request.Body == null)
+                            {
+                                request.Body = string.Empty;
+                                var updatedCat = Util.FromJson<Category>(request.Body);
+                                response.Body = Util.ToJson(_database.UpdateCategory(updatedCat));
+                                response.Status = "3 Updated";
+                            }
+
+                        }
+                        else
+                        {
+                            response.Status = "5 Not Found";
+                        }
                     }
                     else
                     {
-                        response.Status = "5 Not Found";
+                        response.Status = "4 Bad Request";
                     }
                 }
                 else
