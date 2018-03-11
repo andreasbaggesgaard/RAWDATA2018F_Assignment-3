@@ -49,11 +49,34 @@ namespace EchoServer
                 var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
                 var request = JsonConvert.DeserializeObject<Request>(payload);
 
-                var validate = new ValidateRequest();
+                var validate = new HandleRequest();
+
+                var response = validate.InputValidation(request);
+                var res = new byte[0];
+
+                if (response.Status.Contains("ok"))
+                {
+                    // do the method
+                    switch (response.Body)
+                    {
+                        case "read":
+
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (validate.InputValidation(request).Status.Contains("ok"))
+                {
+                    //do method
+                     res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+                }
+                else
+                {
+                      res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
+                }
 
                 
-
-                var res = Encoding.UTF8.GetBytes(validate.InputValidation(request).ToJson());
 
                 strm.Write(res, 0, res.Length);
             }

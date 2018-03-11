@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace DomainModel
 {
-    public class ValidateRequest
+    public class HandleRequest
     {
         List<string> responselist = new List<String>();
         Response response = new Response();
@@ -14,7 +15,7 @@ namespace DomainModel
 
         private Service _database;
 
-        public ValidateRequest()
+        public HandleRequest()
         {
             _database = new Service();
         }
@@ -28,16 +29,23 @@ namespace DomainModel
             }
             MissingMethod(request);
             IlligalMethod(request);
-            MissingPath(request);
+            ValidatePath(request);
             MissingDate(request);
             MissingBody(request);
             IllegalBody(request);
             EchoRequest(request);
-            ApiRead(request);
-            return GenerateResponse();
+            
+            return ReturnStatus();
         }
 
-        private Response GenerateResponse()
+        public Response Read(Request request)
+        {
+
+
+            return response;
+        }
+
+        private Response ReturnStatus()
         {            
             foreach (string s in responselist)
             {
@@ -45,7 +53,7 @@ namespace DomainModel
             }
             return this.response;
         }
-
+        //method
         private void MissingMethod(Request request)
         {
             if (request.Method == null)
@@ -79,13 +87,67 @@ namespace DomainModel
             }
         }
 
-        private void MissingPath(Request request)
+
+        //path  
+        public void ValidatePath(Request request)
         {
-            if (request.Path == null)
+            var pathRoot = "/api/categories";
+            if (request.Path != null)
             {
-                responselist.Add("missing resource");
+                if (request.Path.Contains(pathRoot))
+                {
+                    if (request.Method != null)
+                    {
+                        var el = request.Path.Split('/').Select(x => x.Trim()).ToArray();
+                        if (request.Method == "update" || request.Method == "update")
+                        {  
+                            if (el.Length == 2 )
+                            {
+                                responselist.Add("missing resource");
+                            }
+                            else if(el.Length > 3)
+                            {
+                                responselist.Add("illegal path");
+                            }
+                            else if (el.Length == 3)
+                            {
+                                responselist.Add("2 ok");
+                            }
+                        }
+                        else if (request.Method == "read" || request.Method == "create")
+                        {
+                            if (el.Length == 2)
+                            {
+                                responselist.Add("2 ok");
+                            }
+                        }
+                        else
+                        {
+                            responselist.Add("bad request");
+                        } 
+                    }
+                }
+                else
+                {
+                    responselist.Add("illegal path");
+                } 
             }
+            else
+            {
+                responselist.Add("missing path");
+            } 
+            
+
+
+            var array = new string[2];
+            if (request.Path != null)
+            {
+
+                
+            }
+            return array;
         }
+
 
         private void MissingDate(Request request)
         {
@@ -143,20 +205,9 @@ namespace DomainModel
 
         /* API */
         //check
-        private string[] GetPath(Request request)
-        {
-            var array = new string[2];
-            if (request.Path != null)
-            {
-                
-                array[0] = request.Path.Substring(request.Path.LastIndexOf("/api/") + 1);
-                array[1] = request.Path.Substring(request.Path.LastIndexOf("/api/categories/") + 1);
-                
-            }
-            return array;
-        }
+        
 
-        private void ApiRead(Request request)
+        public Response ApiRead(Request request)
         {
             var path = GetPath(request);
             if (path[1] != null)
