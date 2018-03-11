@@ -31,7 +31,10 @@ namespace DomainModel
             IlligalMethod(request);
             ValidatePath(request);
             MissingDate(request);
-            MissingBody(request);
+
+            //body not required
+            //MissingBody(request);
+
             IllegalBody(request);
             EchoRequest(request);
             
@@ -104,15 +107,17 @@ namespace DomainModel
                             }
                             else if (el.Length == 3)
                             {
-                                try
-                                {
-                                    var i = int.Parse(el[2]);
-                                    responselist.Add("2 ok");
-                                }
-                                catch (Exception e)
-                                {
-                                    responselist.Add("Bad Request");
-                                } 
+                                responselist.Add("2 ok");
+
+                                //try
+                                //{
+                                //    var i = int.Parse(el[2]);
+                                //    responselist.Add("2 ok");
+                                //}
+                                //catch (Exception e)
+                                //{
+                                //    responselist.Add("Bad Request");
+                                //} 
                             }
                         }
                         else if (request.Method == "read" || request.Method == "create")
@@ -151,53 +156,51 @@ namespace DomainModel
             }
         }
 
-        private void MissingBody(Request request)
-        {
-            if(request.Body == null)
-            {
-                responselist.Add("missing body");
-            }
-        }
+
+        /* 
+         * body is not  required
+         */
+        //private void MissingBody(Request request)
+        //{
+        //    if(request.Body == null)
+        //    {
+        //        responselist.Add("missing body");
+        //    }
+        //}
 
         private void IllegalBody(Request request)
         {
             if (request.Body != null)
-            {
-
-            
-            request.Body = request.Body.Trim();
-            if ((request.Body.StartsWith("{") && request.Body.EndsWith("}")) ||
-                (request.Body.StartsWith("[") && request.Body.EndsWith("]"))) 
-            {
-                try
+            { 
+                request.Body = request.Body.Trim();
+                if ((request.Body.StartsWith("{") && request.Body.EndsWith("}")) ||
+                    (request.Body.StartsWith("[") && request.Body.EndsWith("]")))
                 {
-                    var obj = JToken.Parse(request.Body);                    
-                }
-                catch (JsonReaderException jex)
-                {
-                    responselist.Add("illegal body");
-                }
-                catch (Exception ex) 
-                {
-                    responselist.Add("illegal body");
+                    try
+                    {
+                        var obj = JToken.Parse(request.Body);
+                    }
+                    catch (JsonReaderException jex)
+                    {
+                        responselist.Add("illegal body");
+                    }
+                    catch (Exception ex)
+                    {
+                        responselist.Add("illegal body");
+                    }
                 }
             }
-            else
-            {
-                responselist.Add("illegal body");
-            }
-            }
-        }    
-        
-        private void EchoRequest(Request request)
-        {
-            if(request.Method == "echo")
-            {
-                response.Body = request.Body;
-            }                
         }
 
-        /* API */
+        private void EchoRequest(Request request)
+         {
+             if(request.Method == "echo")
+             {
+                 response.Body = request.Body;
+             }                
+         }
+
+         /* API */
         //check
 
 
@@ -233,7 +236,8 @@ namespace DomainModel
                     }
                     catch (Exception e)
                     {
-                        response.Status = "Bad Request";
+                        response.Status = "4 Bad Request";
+                        return response;
                     }
                      
                     

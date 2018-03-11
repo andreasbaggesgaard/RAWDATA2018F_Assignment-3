@@ -57,7 +57,7 @@ namespace EchoServer
                 if (response.Status.Contains("ok"))
                 {
                     // do the method
-                    switch (response.Body)
+                    switch (request.Method)
                     {
                         case "read":
                             handleRequest.Read();  
@@ -66,17 +66,10 @@ namespace EchoServer
                             break;
                     }
                 }
-                if (handleRequest.InputValidation(request).Status.Contains("ok"))
-                {
-                    //do method
-                     res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
-                }
-                else
-                {
-                      res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
-                }
 
-                
+                res = Encoding.UTF8.GetBytes(handleRequest.InputValidation(request).ToJson());
+
+
 
                 strm.Write(res, 0, res.Length);
             }
