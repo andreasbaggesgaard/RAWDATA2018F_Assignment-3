@@ -721,37 +721,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guru\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/Andrei/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoClient\\EchoClient.csproj",
+      "projectUniqueName": "/Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/EchoClient/EchoClient.csproj",
       "projectName": "EchoClient",
-      "projectPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoClient\\EchoClient.csproj",
-      "packagesPath": "C:\\Users\\guru\\.nuget\\packages\\",
-      "outputPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\EchoClient\\obj\\",
+      "projectPath": "/Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/EchoClient/EchoClient.csproj",
+      "packagesPath": "/Users/Andrei/.nuget/packages/",
+      "outputPath": "/Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/EchoClient/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\guru\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/Andrei/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\DomainModel\\DomainModel.csproj": {
-              "projectPath": "E:\\MASTER\\Rawdata\\VSProjects\\RAWDATA2018F_Assignment-3\\DomainModel\\DomainModel.csproj"
+            "/Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/DomainModel/DomainModel.csproj": {
+              "projectPath": "/Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/DomainModel/DomainModel.csproj"
             }
           }
         }
@@ -766,13 +764,14 @@
       "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[11.0.1, )"
+            "version": "11.0.1"
           }
         },
         "imports": [

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoClient", "EchoClient\Ec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{801BD5E7-A2AD-4EEB-B36C-0C2DDF8C237E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment3TestSuite", "..\RAWDATA2017E_Assignment3TestSuite\Assignment3TestSuite\Assignment3TestSuite.csproj", "{444FB35A-D2EB-4CBF-BDB1-3EB175E49EDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{801BD5E7-A2AD-4EEB-B36C-0C2DDF8C237E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{801BD5E7-A2AD-4EEB-B36C-0C2DDF8C237E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{801BD5E7-A2AD-4EEB-B36C-0C2DDF8C237E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{444FB35A-D2EB-4CBF-BDB1-3EB175E49EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444FB35A-D2EB-4CBF-BDB1-3EB175E49EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444FB35A-D2EB-4CBF-BDB1-3EB175E49EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444FB35A-D2EB-4CBF-BDB1-3EB175E49EDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
