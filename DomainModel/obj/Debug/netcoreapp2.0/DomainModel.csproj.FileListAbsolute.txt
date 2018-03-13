@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/andre/source/repos/assignment 3/RAWDATA2018F_Assignment 3/DomainModel/bin/Debug/netcoreapp2.0/DomainModel.deps.json
 C:/Users/andre/source/repos/assignment 3/RAWDATA2018F_Assignment 3/DomainModel/bin/Debug/netcoreapp2.0/DomainModel.dll
 C:/Users/andre/source/repos/assignment 3/RAWDATA2018F_Assignment 3/DomainModel/bin/Debug/netcoreapp2.0/DomainModel.pdb
@@ -25,3 +26,22 @@ E:/MASTER/Rawdata/VSProjects/RAWDATA2018F_Assignment-3/DomainModel/obj/Debug/net
 /Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/DomainModel/obj/Debug/netcoreapp2.0/DomainModel.AssemblyInfo.cs
 /Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/DomainModel/obj/Debug/netcoreapp2.0/DomainModel.dll
 /Users/Andrei/Downloads/RAWDATA/Projects/RAWDATA2018F_Assignment-3/DomainModel/obj/Debug/netcoreapp2.0/DomainModel.pdb
+=======
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\andre\source\repos\assignment 3\RAWDATA2018F_Assignment 3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+E:\MASTER\Rawdata\VSProjects\RAWDATA2018F_Assignment-3\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+>>>>>>> 564f0faf0dd9a40f72941eede15440b08837d332
